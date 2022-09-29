@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Formulário de Cadastro</title>
+</head>
+<body>
+    <main> <!-- considerei todo o cadastro como corpo principal e coloquei dentro da tag <main> -->
+        <!-- Para criar um formulário é utilizado a tag <form></form> -->
+        <form>
+            <!-- o navegador vai tentar enviar esses dados dentro dessa tag para um servidor/(banco de dados), através de um botão-->    
+        
+            <!-- <input /> São tags html que vão fornecer as estruturas necessárias para inserção dos dados dentro da página HTML. -->
+            
+            <section>
+                <label for="nome"> Nome </label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui..." required="true" /> 
+                <!--lembrando que a tag <input /> não tem uma tag de fechamento no final!!!-->
+            </section>
+
+            <section>
+                <label for="email"> E-mail </label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail aqui..." required="true" />
+            </section>
+        
+            <section>
+                <label for="descrição">Descrição</label>
+                <textarea id="descrição" name="descricao" placeholder="Fale mais sobre você aqui..." cols="30" rows="5"></textarea>
+            </section>
+            
+            <section>
+                <label for="modulos">Módulo</label>
+                <select name="modulo" id="modulos">
+                    <option value="">Escolher módulo</option>
+                    <option value="M1">Módulo 1</option>
+                    <option value="M2">Módulo 2</option>
+                    <option value="M3">Módulo 3</option>
+                    <option value="M4">Módulo 4</option>
+                    <option value="M5">Módulo 5</option>
+                    <option value="M6">Módulo 6</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="senha"> Cadastrar Senha </label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha aqui..." required/> 
+            </section>
+            
+            <section>
+                <label for="confirmarsenha"> Confirmar Senha </label>
+                <input type="password" id="confirmarsenha" name="confirmaçãosenha" placeholder="Digite sua senha novamente aqui..." required/>
+            </section>
+            
+            <section>
+                <p> Deseja receber novidades em seu e-mail? </p>
+                <label for="sim">Sim</label>
+                <input type="radio" id="sim" name="notificação" value="Sim"/>
+                
+                <label for="não">Não</label>
+                <input type="radio" id="não" name="notificação" value="Não"/>
+            </section>
+
+            <button type="submit">Cadastrar</button> 
+            <!--tem que utilizar a propriedade name para identificar os campos para o envio correto das informações. -->
+        </form>
+        <!-- <footer>
+            <p> Cadastro realizado com sucesso!</p>
+        </footer> -->
+    </main>
+</body>
+</html>
+
+ <!--
+        **  placeholder é o texto que vai dentro do campo;
+
+        **  maxlength - limita a quantidade de caracteres que vai dentro do campo. exemplo: maxlength="5";
+
+        **  label - são identificadores dos campos (fica em cima dos input);
+
+        **  validação - significa que vai verificar e deixar o campo obrigatório. Propriedade utilizada para isso é o required="true" (se deixar o required vazio o sistema também identifica como true.)
+        com essa propriedade o sistema não permiti o envio do cadastro com o campo vazio;
+
+        ** para o input type"radio" tem que inserir além do name um value para passar a informação;
+
+        ** a tag <select> cria um grupo de opções que vamos fornecer para o usuário dentro do formulário. Dentro dessa tag tem as sub-tags que vai compor a estrutura do select. exemplo: 
+            <select name="pets" id="pet-select">
+                <option value="dog"> Dog </option>
+                ..
+                ..
+                ..
+            </select>
+            O valeu dentro do option é a informação que será enviada para o banco de dados.
+            A propriedade name no caso de select fica dentro da sua tag e não nos options.
+
+        ** A tag <textare> fornece um campo de texto mais abrangente, não seria coerente pedir para o usuário realizar uma redação dentro de campo input, porque é um campo mais reduzido.
+            Uma outra caracteristica dessa tag é que ele permiti aumentar a área onde esta sendo digitado o texto, um tipo de controlador.
+            <textare>...</textare> tem que abrir e fechar a tag.
+            Vai ter a propriedade:
+            Cols - colunas;
+            Rows - linhas;
+
+-->
